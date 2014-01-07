@@ -185,8 +185,8 @@ public class BPlayer {
 							if (time == 0) {
 								// push him only to the side? or any direction
 								// like now
-								push.setX((drunkeness/20)*(Math.random()* - 0.5));
-								push.setZ((drunkeness/20)*(Math.random()* - 0.5));
+								push.setX((drunkeness/50)*(Math.random() - 0.5));
+								push.setZ((drunkeness/50)*(Math.random() - 0.5));
 								player.setVelocity(push);
 							} else if (time < 0 && time > -10) {
 								// push him some more in the same direction
@@ -294,11 +294,8 @@ public class BPlayer {
 			Location home = null;
 			if (homeType.equalsIgnoreCase("bed")) {
 				home = player.getBedSpawnLocation();
-			} else if (homeType.equalsIgnoreCase("ManagerXL")) {
-				if (com.dre.managerxl.MPlayer.get(player.getName()) != null) {
-					home = com.dre.managerxl.MPlayer.get(player.getName()).getHome();
-				}
-			} else if (homeType.startsWith("cmd: ")) {
+			}
+                        else if (homeType.startsWith("cmd: ")) {
 				player.performCommand(homeType.substring(5));
 			} else if (homeType.startsWith("cmd:")) {
 				player.performCommand(homeType.substring(4));

@@ -77,7 +77,12 @@ public class PlayerListener implements Listener {
 								if (BCauldron.ingredientAdd(clickedBlock, materialInHand)) {
 									if (item.getAmount() > 1) {
 										item.setAmount(item.getAmount() - 1);
-									} else {
+									} else if (materialInHand == Material.MILK_BUCKET)
+                                                                        {
+                                                                        player.setItemInHand(new ItemStack(Material.BUCKET));
+                                                                        }
+                                                                        
+                                                                        else {
 										player.setItemInHand(new ItemStack(0));
 									}
 								}
