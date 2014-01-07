@@ -1,10 +1,12 @@
 package com.dre.brewery.listeners;
 
+import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.BrewEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryPickupItemEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.BrewerInventory;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -80,4 +82,14 @@ public class InventoryListener implements Listener {
 			}
 		}
 	}
+
+// block the pickup of items where getPickupDelay is > 1000 (puke)  Taken From Orginal
+   @EventHandler
+   public void onInventoryPickupItem(InventoryPickupItemEvent event){
+       Item item = event.getItem();
+       
+       if (item.getPickupDelay() > 1000){
+           event.setCancelled(true);
+       }       
+   }
 }
