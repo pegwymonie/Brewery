@@ -1,62 +1,4 @@
-# config for Brewery.jar
-
-
-# -- Settings --
-# Defaults are written in []
-# Deleting of single settings disables them
-
-# Languagefile to be used (found in plugins/Brewery/languages)
-language: en
-
-# If the player wakes up at /home when logging in after excessive drinking (/home plugin must be installed!) [true]
-enableHome: true
-
-# Type of the home-teleport: ['cmd: home']
-# bed = Player will be teleported to his spawn bed
-# SamplePlugin = installed home plugin. Supports: ManagerXL. If not available:
-# 'cmd: home' = /home will be executed by the player. He has to have permissions for it without any delay!
-# 'cmd: spawn' = /spawn will be executed by the player.
-# 'cmd: whatever' = /whatever will be executed by the player.
-homeType: 'cmd: home'
-
-# If the player "wakes up" at a random place when offline for some time while drinking (the places have to be defined with '/br Wakeup add' through an admin)
-# The Player wakes at the nearest of two random places of his world [true]
-enableWake: true
-
-# If the Player may get some logins denied, when his character is drunk [true]
-enableLoginDisallow: true
-
-# If the Player faints (gets kicked) for some minutes if he overdrinks [true]
-enableKickOnOverdrink: true
-
-# If the Player vomits on high drunkeness (drops item defined below) [true]
-# The item can not be collected and stays on the ground until it despawns. (Warning: May be collected after Server restart, or through a hopper)
-enablePuke: true
-
-# Item that is dropped multiple times uncollectable when puking [SOUL_SAND]
-pukeItem: SOUL_SAND
-
-# Consumable Item/strength. Decreases the alcohol level by <strength> when consumed. (list)
-drainItems:
-- BREAD/4
-- MILK_BUCKET/2
-
-# Time (in days) that drunkeness-data stays in memory after a player goes offline, to apply hangover etc. [7]
-hangoverDays: 7
-
-# Color the Item information (lore) depending on quality while it is 1. in a barrel and/or 2. in a brewing stand [true, false]
-colorInBarrels: true
-colorInBrewer: false
-
-# Autosave interval in minutes [3]
-autosave: 3
-
-# Config Version
-version: '1.1'
-
-
-# -- Recipes for Potions --
-
+# Recipes for Potions
 # name: Different names for bad/normal/good (Formatting codes possible: such as &6)
 # ingredients: List of material/amount
 # cookingtime: Time in real minutes ingredients have to boil
@@ -69,16 +11,15 @@ version: '1.1'
 # effects: List of effect/duration  Special potion-effect when drinking, duration in sek. Suffix name with 'X' to hide effect from label. Sample: POISONX/10
 #   (WEAKNESS, INCREASE_DAMAGE, SLOW and SPEED are always hidden.)  Possible Effects: http://jd.bukkit.org/rb/apidocs/org/bukkit/potion/PotionEffectType.html
 #   instant effects (such as HEAL) _must!_ have defined the level instead of the duration!
-
 recipes:
    1:
       name: Skunky Wheatbeer/Wheatbeer/Fine Wheatbeer
       ingredients: 
       - WHEAT/3
-      cookingtime: 8
+      cookingtime: 8 minutes
       distillruns: 0
-      wood: 1
-      age: 2
+      wood: Birch      
+      age: 2 mc days
       color: BRIGHT_GREY
       difficulty: 1
       alcohol: 5
@@ -88,8 +29,8 @@ recipes:
       - WHEAT/6
       cookingtime: 8
       distillruns: 0
-      wood: 0
-      age: 3
+      wood: any
+      age: 3 mcd
       color: ORANGE
       difficulty: 1
       alcohol: 6
@@ -105,7 +46,7 @@ recipes:
       difficulty: 2
       alcohol: 7
    4:
-      name: Awkward Mead/Mead/&6Golden Mead
+      name: Awkward Mead/Mead/ &6Golden Mead
       ingredients: 
       - SUGAR_CANE/6
       cookingtime: 3
@@ -116,7 +57,7 @@ recipes:
       difficulty: 2
       alcohol: 9
    5:
-      name: Apple Mead/Sweet Apple Mead/&6Sweet Golden Apple Mead
+      name: Apple Wine/Sweet Apple Wine/ &6Golden Apple Wine
       ingredients: 
       - SUGAR_CANE/6
       - APPLE/2
@@ -127,8 +68,6 @@ recipes:
       color: ORANGE
       difficulty: 4
       alcohol: 12
-      effects:
-      - WATER_BREATHINGX/150
    6:
       name: Bitter Rum/Spicy Rum/&6Golden Rum
       ingredients: 
@@ -140,10 +79,8 @@ recipes:
       color: DARK_RED
       difficulty: 6
       alcohol: 30
-      effects:
-      - FIRE_RESISTANCE/100
    7:
-      name: Lousy Vodka/Vodka/Russian Vodka
+      name: Lousy Wood grain Alcohol/Wood grain Alcohol/Strong Wood grain Alcohol
       ingredients: 
       - POTATO_ITEM/10
       cookingtime: 15
@@ -156,7 +93,7 @@ recipes:
       - WEAKNESS/15
       - POISON/10
    8:
-      name: Poor Absinthe/Absinthe/Strong Absinthe
+      name: Poor Absinthe/Absinthe/&6Strong Absinthe
       ingredients:
       - LONG_GRASS/15
       cookingtime: 3
@@ -165,7 +102,7 @@ recipes:
       difficulty: 8
       alcohol: 45
       effects:
-      - POISON/20
+      - POISON/20t
    9:
       name: Potato soup
       ingredients:
@@ -176,9 +113,324 @@ recipes:
       difficulty: 1
       effects:
       - HEAL/1
-
-
-
+   10:
+      name: Bad Skutten/Skutten/&6Fine Skutten
+      ingredients: 
+      - ROTTEN_FLESH/13
+      cookingtime: 10
+      distillruns: 2
+      wood: 4
+      age: 8
+      color: RED
+      difficulty: 4
+      alcohol: 10
+      effects:
+      -POISON/10
+   11:
+      name: Bad Pumpkin Beer/Pumpkin Beer/&6Glissen Pumpkin Beer
+      ingredients: 
+      - PUMPKIN/20
+      cookingtime: 20
+      distillruns: 0
+      wood: 0
+      age: 14
+      color: Gold
+      difficulty: 5
+      alcohol: 15
+      effects:
+      - INCREASE_DAMAGE/60
+   12:
+      name: Rut Gut/Mutter’s Milk/Mother’s Milk
+      ingredients: 
+      - STEAK/6
+      - CARROT_ITEM/4
+      - SUGAR_CANE/2
+      - MILK_BUCKET/1
+      cookingtime: 10
+      distillruns: 0
+      wood: 3
+      age: 7
+      color: White
+      difficulty: 5
+      alcohol: 5
+      effects:
+       -REGENERATION/30
+       -SATURATION/50
+   13:
+      name: Lousy Burbon/Burbon/Fine Burbon
+      ingredients: 
+      - SUGAR_CANE/3
+      - WHEAT/3
+      cookingtime: 10
+      distillruns: 3
+      wood: 4
+      age: 14
+      color: Dark_Grey
+      difficulty: 3
+      alcohol: 15
+      effects:
+      - CONFUSION/15
+   14:
+      name: Rotten Dragon/Dragon/Red Dragon
+      ingredients: 
+      - MAGMA_CREAM/1
+      - BLAZE_POWDER/1
+      - WHEAT/6
+      - REDSTONE/5
+      cookingtime: 10
+      distillruns: 3
+      wood: 3
+      age: 10
+      color: RED
+      difficulty: 10
+      alcohol: 25
+      effects:
+      - SPEED/180
+      - FIRE_RESISTANCE/60
+      - INCREASE_DAMAGE/60
+   15:
+      name: Rotten Grain/Grain Beer/Fine Grain Beer
+      ingredients: 
+      - WHEAT_SEEDS/10
+      cookingtime: 20
+      distillruns: 3
+      wood: 0
+      age: 10
+      color: Green
+      difficulty: 1
+      alcohol: 20
+   16:
+      name: Nectar/Golden Nectar/Nectar of the Gods
+      ingredients: 
+      - GOLDEN_APPLE/1
+      - WHEAT/15
+      - SUGAR_CANE/15
+      - GOLD_NUGGET/5
+      cookingtime: 60
+      distillruns: 4
+      wood: 0
+      age: 20
+      color: Gold
+      difficulty: 10
+      alcohol: 30
+      Effects:
+        - INCREASE_DAMAGE/120
+        - REGENERATION/120
+        - ABSORPTION/120
+        - FIRE_RESISTANCE/120
+   17:
+      name: Bad Tops/Tops brew/Fine Tops Brew
+      ingredients: 
+      - BROWN_MUSHROOM/10
+      cookingtime: 5
+      distillruns: 0
+      wood: 3
+      age: 8
+      color: Red
+      difficulty: 3
+      alcohol: 25
+      Effects:
+         -SPEED/60
+         -CONFUSION/15
+   18:
+      name: Rotten Eye/Eye's Brew/Fine Eye's Brew
+      ingredients: 
+      - SPIDER_EYE/8
+      cookingtime: 15
+      distillruns: 2
+      wood: 4
+      age: 5
+      color: Grey
+      difficulty: 5
+      alcohol: 15
+       Effects:
+            -NIGHT_VISION/240
+            -HUNGER/30
+   19:
+      name: Bad Gloom/Gloom Brew/Fine Gloom Brew
+      ingredients: 
+      - MELON/30
+      cookingtime: 8
+      distillruns: 2
+      wood: 0
+      age: 10
+      color: Water
+      difficulty: 8
+      alcohol: 50
+      Effects:
+         -SPEED/60
+         -BLINDNESS/60
+         -INCREASE_DAMAGE/60
+   20:
+      name: Rocks/Bolders/Juggernaut
+      ingredients: 
+      - IRON_INGOT/5
+      - WHEAT/10
+       -MAGMA_CREAM/10
+      cookingtime: 30
+      distillruns: 5
+      wood: 4
+      age: 20
+      color: Black
+      difficulty: 8
+      alcohol: 25
+      Effects:
+        -INCREASE_DAMAGE/60
+        -SLOW/60
+        -DAMAGE_RESISTANCE/60
+   21:
+      name: Bad Gold Schlogger/Gold Schlogger/Fine Gold Schlogger
+      ingredients: 
+      - GOLD_NUGGET/5
+      - SUGAR/15
+      - MELON/5
+      cookingtime: 18
+      distillruns: 5
+      wood: 0
+      age: 17
+      color: Cyan
+      difficulty: 8
+      alcohol: 20
+      Effects:
+         -INCREASE_DAMAGE/60
+         -FAST_DIGGING/60
+   22:
+      Name: Bad Gin/Gin/Fine Gin
+      ingredients: 
+      - SUGAR/10
+      - POTATO_ITEM/10
+      cookingtime: 8
+      distillruns: 3
+      wood: 0
+      age: 8
+      color: Water
+      difficulty: 3
+      alcohol: 10
+   23:
+      name: Bad Tequila/Tequila/Blue Tequila
+      ingredients: 
+      - INK_SACK/10
+      cookingtime: 15
+      distillruns: 3
+      wood: 2
+      age: 19
+      color: Water
+      difficulty: 8
+      alcohol: 20
+   24:
+      name: Salty Marrow/Marrow/Dragon Marrow
+      ingredients: 
+      - BONE/3
+      - INK_SACK/3
+      cookingtime: 8
+      distillruns: 0
+      wood: 0
+      age: 6
+      color: White
+      difficulty: 8
+      alcohol: 15
+      Effects:
+         -INVISIBILITY/180
+         -HUGER/30
+   25:
+      name: Uknown/Dangerous Brew/XXX      
+      ingredients: 
+      -PUFFERFISH/6
+      -RED_MUSHROOM/6
+      -EYE_OF_ENDER/6
+      cookingtime: 60
+      distillruns: 6
+      wood: 0
+      age: 6
+      color: water
+      difficulty: 9
+      alcohol: 100
+      Effects:
+         -HARM/50
+         -POSION/50
+         -HUNGER/100
+         -INVISIBILITY/15
+   26:
+      name: bad Juice/ Juice/Rich Juice
+      ingredients: 
+      - SUGAR/15
+      - MELON/5
+      cookingtime: 3
+      distillruns: 1
+      wood: 0
+      age: 0
+      color: pink
+      difficulty: 2
+      alcohol: 5
+      Effects:
+         -SATURATION/30
+   27:
+      name: Poison puffer/Puffer/Wonderful Puffer
+      ingredients: 
+      - PUFFERFISH/13
+      cookingtime: 5
+      distillruns: 1
+      wood: 0
+      age: 2
+      color: Blue
+      difficulty: 3
+      alcohol: 10
+      Effects:
+         -WATER_BREATHING/150
+         -NIGHT_VISION/120
+   28:
+      name: Bad Patriot/Patriot/Fantastic Patriot
+      ingredients: 
+      - INK_SACK/5
+      - STEAK/5
+      - GRILLED_PORK/3
+      cookingtime: 10
+      distillruns: 7
+      wood: 4
+      age: 3
+      color: red
+      difficulty: 5
+      alcohol: 25
+      Effects:
+         -INCREASE_DAMAGE/60
+         -SPEED/60
+         -WITHER/30
+   29:
+      name:  Bad Prarie Oyster/Prarie Oyster/Good Prarie Oyster
+      ingredients: 
+      - GRILLED_PORK/6
+      - EGG/4
+      - REDSTONE/2
+      cookingtime: 5
+      distillruns: 1
+      wood: 0
+      age: 0
+      color: Red
+      difficulty: 2
+      alcohol: 5
+      Effects:
+         - HEAL/15
+         - HUNGER/30
+   30:
+      name: Bad 30/30/Super 30
+      ingredients: 
+      - MELON/5
+      - CARROT_ITEM/5
+      - POTATO_ITEM/5
+      - SUGAR/10
+      - WHEAT/5
+      cookingtime: 9
+      distillruns: 6
+      wood: 3
+      age: 3
+      color: Cyan
+      difficulty: 6
+      alcohol: 30
+      Effects:
+         -SPEED/90
+         -HASTE/60
+         -CONFUSION/30
+         
 # cooked: EVERY possible ingredient and the names for the originating potions after fermenting:
 
 cooked:
@@ -188,13 +440,32 @@ cooked:
    POTATO_ITEM: Potatomash
    LONG_GRASS: Boiled herbs
    RED_MUSHROOM: Mushroom brew
+   MAGMA_CREAM: Boiling brew
+   BLAZE_POWDER: Steaming mash
+   REDSTONE: Glowing soup
+   COOKED_BEEF: Beefy stock
+   MILK_BUKKET: Milky brew
+   SUGAR: Sweat water
+   ROTTEN_FLESH: Rotten mash
+   SEEDS: Grassy Slury
+   GOLDEN_APPLE: Heavenly cider
+   GOLD_NUGGET: Golden mash
+   BROWN_MUSHROOM: Murky mushroom brew
+   SPIDER_EYE: Corrupted water
+   MELON: Sweatened mash
+   IRON_INGOT: Strong brew
+   INK_SACK: Dyed brew
+   BONE: Necrotic vial
+   RAW_FISH : Fishy mash
+   EYE_OF_ENDER: Mysterious liquid.
+   GRILLED_PORK: Porky stock
+   EGG: Egg Drop Soup
+
+   
 
 
 
 # -- Chat Distortion Settings --
-
-# Log to the Serverlog what the player actually wrote, before his words were altered [false]
-logRealChat: false
 
 # Text after specified commands will be distorted when drunk (list) [- /gl]
 distortCommands:

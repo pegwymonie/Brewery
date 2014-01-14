@@ -132,6 +132,7 @@ public class Barrel {
 		if (inventory != null) {
 			for (HumanEntity human : inventory.getViewers()) {
 				human.closeInventory();
+                                //Warn Possible Duplication Attempt?
 			}
 			ItemStack[] items = inventory.getContents();
 			for (ItemStack item : items) {
