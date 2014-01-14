@@ -125,7 +125,7 @@ recipes:
       difficulty: 4
       alcohol: 10
       effects:
-      -POISON/10
+      - POISON/10
    11:
       name: Bad Pumpkin Beer/Pumpkin Beer/&6Glissen Pumpkin Beer
       ingredients: 
@@ -142,7 +142,7 @@ recipes:
    12:
       name: Rut Gut/Mutter’s Milk/Mother’s Milk
       ingredients: 
-      - STEAK/6
+      - COOKED_BEEF/6
       - CARROT_ITEM/4
       - SUGAR_CANE/2
       - MILK_BUCKET/1
@@ -154,8 +154,8 @@ recipes:
       difficulty: 5
       alcohol: 5
       effects:
-       -REGENERATION/30
-       -SATURATION/50
+       - REGENERATION/30
+       - SATURATION/50
    13:
       name: Lousy Burbon/Burbon/Fine Burbon
       ingredients: 
@@ -191,7 +191,7 @@ recipes:
    15:
       name: Rotten Grain/Grain Beer/Fine Grain Beer
       ingredients: 
-      - WHEAT_SEEDS/10
+      - SEEDS/10
       cookingtime: 20
       distillruns: 3
       wood: 0
@@ -230,8 +230,8 @@ recipes:
       difficulty: 3
       alcohol: 25
       Effects:
-         -SPEED/60
-         -CONFUSION/15
+         - SPEED/60
+         - CONFUSION/15
    18:
       name: Rotten Eye/Eye's Brew/Fine Eye's Brew
       ingredients: 
@@ -243,7 +243,7 @@ recipes:
       color: Grey
       difficulty: 5
       alcohol: 15
-       Effects:
+      Effects:
             -NIGHT_VISION/240
             -HUNGER/30
    19:
@@ -295,16 +295,16 @@ recipes:
          -INCREASE_DAMAGE/60
          -FAST_DIGGING/60
    22:
-      Name: Bad Gin/Gin/Fine Gin
+      name: Bad Gin/Gin/Fine Gin
       ingredients: 
-      - SUGAR/10
-      - POTATO_ITEM/10
-      cookingtime: 8
+      - SUGAR_CANE/10
+      - POTATO_ITEM/25
+      cookingtime: 18
       distillruns: 3
       wood: 0
       age: 8
       color: Water
-      difficulty: 3
+      difficulty: 6
       alcohol: 10
    23:
       name: Bad Tequila/Tequila/Blue Tequila
@@ -335,9 +335,9 @@ recipes:
    25:
       name: Uknown/Dangerous Brew/XXX      
       ingredients: 
-      -PUFFERFISH/6
-      -RED_MUSHROOM/6
-      -EYE_OF_ENDER/6
+      - RAW_FISH/6
+      - RED_MUSHROOM/6
+      - EYE_OF_ENDER/6
       cookingtime: 60
       distillruns: 6
       wood: 0
@@ -367,7 +367,7 @@ recipes:
    27:
       name: Poison puffer/Puffer/Wonderful Puffer
       ingredients: 
-      - PUFFERFISH/13
+      - RAW_FISH/13
       cookingtime: 5
       distillruns: 1
       wood: 0
@@ -382,7 +382,7 @@ recipes:
       name: Bad Patriot/Patriot/Fantastic Patriot
       ingredients: 
       - INK_SACK/5
-      - STEAK/5
+      - COOKED_BEEF/5
       - GRILLED_PORK/3
       cookingtime: 10
       distillruns: 7
@@ -444,7 +444,7 @@ cooked:
    BLAZE_POWDER: Steaming mash
    REDSTONE: Glowing soup
    COOKED_BEEF: Beefy stock
-   MILK_BUKKET: Milky brew
+   MILK_BUCKET: Milky brew
    SUGAR: Sweat water
    ROTTEN_FLESH: Rotten mash
    SEEDS: Grassy Slury
