@@ -37,13 +37,9 @@
   
   	<repositories>
 		<repository>
-			<id>spout-repo</id>
-			<url>http://nexus.spout.org/content/groups/public/</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
+                        <id>bukkit-repo</id>
+                        <url>http://repo.bukkit.org/content/groups/public/</url>
+                </repository>
 		
 		<repository>
 			<id>milkbowl-repo</id>
@@ -54,11 +50,10 @@
    <dependencies>
 		<!-- Provided by third-party -->
 		<dependency>
-			<groupId>org.spout</groupId>
-			<artifactId>craftbukkit</artifactId>
-			<version>1.6.2-R0.2-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+                    <groupId>org.bukkit</groupId>
+                    <artifactId>bukkit</artifactId>
+                    <version>1.6.4-R2.1-SNAPSHOT</version>
+                </dependency>
 		
 		<dependency>
 			<groupId>net.milkbowl.vault</groupId>

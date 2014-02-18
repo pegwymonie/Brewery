@@ -185,8 +185,8 @@ public class BPlayer {
 							if (time == 0) {
 								// push him only to the side? or any direction
 								// like now
-								push.setX((drunkeness/50)*(Math.random() - 0.5));
-								push.setZ((drunkeness/50)*(Math.random() - 0.5));
+								push.setX((Math.random() - 0.5));
+								push.setZ((Math.random() - 0.5));
 								player.setVelocity(push);
 							} else if (time < 0 && time > -10) {
 								// push him some more in the same direction

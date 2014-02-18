@@ -1,3 +1,58 @@
+# config for Brewery.jar
+
+
+# -- Settings --
+# Defaults are written in []
+# Deleting of single settings disables them
+
+# Languagefile to be used (found in plugins/Brewery/languages)
+language: en
+
+# If the player wakes up at /home when logging in after excessive drinking (/home plugin must be installed!) [true]
+enableHome: true
+
+# Type of the home-teleport: ['cmd: home']
+# bed = Player will be teleported to his spawn bed
+# SamplePlugin = installed home plugin. Supports: ManagerXL. If not available:
+# 'cmd: home' = /home will be executed by the player. He has to have permissions for it without any delay!
+# 'cmd: spawn' = /spawn will be executed by the player.
+# 'cmd: whatever' = /whatever will be executed by the player.
+homeType: 'cmd: home'
+
+# If the player "wakes up" at a random place when offline for some time while drinking (the places have to be defined with '/br Wakeup add' through an admin)
+# The Player wakes at the nearest of two random places of his world [true]
+enableWake: true
+
+# If the Player may get some logins denied, when his character is drunk [true]
+enableLoginDisallow: true
+
+# If the Player faints (gets kicked) for some minutes if he overdrinks [true]
+enableKickOnOverdrink: true
+
+# If the Player vomits on high drunkeness (drops item defined below) [true]
+# The item can not be collected and stays on the ground until it despawns. (Warning: May be collected after Server restart, or through a hopper)
+enablePuke: true
+
+# Item that is dropped multiple times uncollectable when puking [SOUL_SAND]
+pukeItem: SOUL_SAND
+
+# Consumable Item/strength. Decreases the alcohol level by <strength> when consumed. (list)
+drainItems:
+- BREAD/4
+- MILK_BUCKET/2
+
+# Time (in days) that drunkeness-data stays in memory after a player goes offline, to apply hangover etc. [7]
+hangoverDays: 7
+
+# Color the Item information (lore) depending on quality while it is 1. in a barrel and/or 2. in a brewing stand [true, false]
+colorInBarrels: true
+colorInBrewer: false
+
+# Autosave interval in minutes [3]
+autosave: 3
+
+# Config Version
+version: '1.1'
 # Recipes for Potions
 # name: Different names for bad/normal/good (Formatting codes possible: such as &6)
 # ingredients: List of material/amount
@@ -16,7 +71,7 @@ recipes:
       name: Skunky Wheatbeer/Wheatbeer/Fine Wheatbeer
       ingredients: 
       - WHEAT/3
-      cookingtime: 8 minutes
+      cookingtime: 8 
       distillruns: 0
       wood: Birch      
       age: 2 mc days
@@ -102,7 +157,7 @@ recipes:
       difficulty: 8
       alcohol: 45
       effects:
-      - POISON/20t
+      - POISON/20
    9:
       name: Potato soup
       ingredients:
@@ -134,7 +189,7 @@ recipes:
       distillruns: 0
       wood: 0
       age: 14
-      color: Gold
+      color: orange
       difficulty: 5
       alcohol: 15
       effects:
@@ -150,7 +205,7 @@ recipes:
       distillruns: 0
       wood: 3
       age: 7
-      color: White
+      color: Water
       difficulty: 5
       alcohol: 5
       effects:
@@ -165,7 +220,7 @@ recipes:
       distillruns: 3
       wood: 4
       age: 14
-      color: Dark_Grey
+      color: Grey
       difficulty: 3
       alcohol: 15
       effects:
@@ -210,7 +265,7 @@ recipes:
       distillruns: 4
       wood: 0
       age: 20
-      color: Gold
+      color: Orange
       difficulty: 10
       alcohol: 30
       Effects:
@@ -230,8 +285,8 @@ recipes:
       difficulty: 3
       alcohol: 25
       Effects:
-         - SPEED/60
-         - CONFUSION/15
+        - SPEED/60
+        - CONFUSION/15
    18:
       name: Rotten Eye/Eye's Brew/Fine Eye's Brew
       ingredients: 
@@ -244,8 +299,8 @@ recipes:
       difficulty: 5
       alcohol: 15
       Effects:
-            -NIGHT_VISION/240
-            -HUNGER/30
+        - NIGHT_VISION/240
+        - HUNGER/30
    19:
       name: Bad Gloom/Gloom Brew/Fine Gloom Brew
       ingredients: 
@@ -258,15 +313,15 @@ recipes:
       difficulty: 8
       alcohol: 50
       Effects:
-         -SPEED/60
-         -BLINDNESS/60
-         -INCREASE_DAMAGE/60
+         - SPEED/60
+         - BLINDNESS/60
+         - INCREASE_DAMAGE/60
    20:
       name: Rocks/Bolders/Juggernaut
       ingredients: 
       - IRON_INGOT/5
       - WHEAT/10
-       -MAGMA_CREAM/10
+      - MAGMA_CREAM/10
       cookingtime: 30
       distillruns: 5
       wood: 4
@@ -275,9 +330,9 @@ recipes:
       difficulty: 8
       alcohol: 25
       Effects:
-        -INCREASE_DAMAGE/60
-        -SLOW/60
-        -DAMAGE_RESISTANCE/60
+        - INCREASE_DAMAGE/60
+        - SLOW/60
+        - DAMAGE_RESISTANCE/60
    21:
       name: Bad Gold Schlogger/Gold Schlogger/Fine Gold Schlogger
       ingredients: 
@@ -292,8 +347,8 @@ recipes:
       difficulty: 8
       alcohol: 20
       Effects:
-         -INCREASE_DAMAGE/60
-         -FAST_DIGGING/60
+        - INCREASE_DAMAGE/60
+        - FAST_DIGGING/60
    22:
       name: Bad Gin/Gin/Fine Gin
       ingredients: 
@@ -326,12 +381,12 @@ recipes:
       distillruns: 0
       wood: 0
       age: 6
-      color: White
+      color: WATER
       difficulty: 8
       alcohol: 15
       Effects:
-         -INVISIBILITY/180
-         -HUGER/30
+        - INVISIBILITY/180
+        - HUNGER/30
    25:
       name: Uknown/Dangerous Brew/XXX      
       ingredients: 
@@ -346,10 +401,10 @@ recipes:
       difficulty: 9
       alcohol: 100
       Effects:
-         -HARM/50
-         -POSION/50
-         -HUNGER/100
-         -INVISIBILITY/15
+        - HARM/50
+        - POSION/50
+        - HUNGER/100
+        - INVISIBILITY/15
    26:
       name: bad Juice/ Juice/Rich Juice
       ingredients: 
@@ -363,7 +418,7 @@ recipes:
       difficulty: 2
       alcohol: 5
       Effects:
-         -SATURATION/30
+        - SATURATION/30
    27:
       name: Poison puffer/Puffer/Wonderful Puffer
       ingredients: 
@@ -376,8 +431,8 @@ recipes:
       difficulty: 3
       alcohol: 10
       Effects:
-         -WATER_BREATHING/150
-         -NIGHT_VISION/120
+        - WATER_BREATHING/150
+        - NIGHT_VISION/120
    28:
       name: Bad Patriot/Patriot/Fantastic Patriot
       ingredients: 
@@ -392,9 +447,9 @@ recipes:
       difficulty: 5
       alcohol: 25
       Effects:
-         -INCREASE_DAMAGE/60
-         -SPEED/60
-         -WITHER/30
+        - INCREASE_DAMAGE/60
+        - SPEED/60
+        - WITHER/30
    29:
       name:  Bad Prarie Oyster/Prarie Oyster/Good Prarie Oyster
       ingredients: 
@@ -409,8 +464,8 @@ recipes:
       difficulty: 2
       alcohol: 5
       Effects:
-         - HEAL/15
-         - HUNGER/30
+        - HEAL/15
+        - HUNGER/30
    30:
       name: Bad 30/30/Super 30
       ingredients: 
@@ -427,10 +482,9 @@ recipes:
       difficulty: 6
       alcohol: 30
       Effects:
-         -SPEED/90
-         -HASTE/60
-         -CONFUSION/30
-         
+        - SPEED/90
+        - HASTE/60
+        - CONFUSION/30        
 # cooked: EVERY possible ingredient and the names for the originating potions after fermenting:
 
 cooked:

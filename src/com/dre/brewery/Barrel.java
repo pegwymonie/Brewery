@@ -2,6 +2,8 @@ package com.dre.brewery;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.Map;
+import java.util.logging.Logger;
+import org.bukkit.Bukkit;
 
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -12,6 +14,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.configuration.ConfigurationSection;
 
 public class Barrel {
+    private Logger log = Bukkit.getLogger();
 
 	public static CopyOnWriteArrayList<Barrel> barrels = new CopyOnWriteArrayList<Barrel>();
 
@@ -131,8 +134,10 @@ public class Barrel {
 	public void remove(Block broken) {
 		if (inventory != null) {
 			for (HumanEntity human : inventory.getViewers()) {
-				human.closeInventory();
+				human.closeInventory();                                
+                                log.warning("Duplication attempt Detected: ".concat(human.getName()));
                                 //Warn Possible Duplication Attempt?
+                                
 			}
 			ItemStack[] items = inventory.getContents();
 			for (ItemStack item : items) {
